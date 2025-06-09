@@ -7,6 +7,7 @@ static void repl()
 {
   char line[1024];
   Stack* stack = new_stack(10);
+  List* list = new_list();
   for (;;)
   {
     printf("> ");
@@ -17,7 +18,7 @@ static void repl()
       break;
     }
 
-    interpret(line, stack);
+    interpret(line, stack, list);
   }
 }
 
