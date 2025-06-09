@@ -12,16 +12,23 @@ bool isEqual(const char *str1, const char *str2) {
     return strcmp(str1, str2) == 0;
 }
 
-void interpret (const char *source, Stack* stack) {
+void interpret (const char *source, Stack* stack, List* list) {
     char op[10];
     char arg[10];
 
     sscanf (source, "%s%s", op, arg);
-    // printf("operação: %s\n", op);
-    // printf("argumento: %s\n",  arg);
 
     if (isEqual(op, "push")) { // Adicionar à pilha
-        stack_push(stack, atoi(arg));
+        int value;
+        /*armazena um inteiro decimal na variável value
+        se não houver nenhum número, pega o valor da variável
+        na lista de acordo com a chave
+        */
+        if (sscanf(arg, "%d", &value) == 0) {
+            value = list_get(list, arg);
+        }
+
+        stack_push(stack, value);
     } else if (isEqual(op, "add")) { // Somar
         const int a = stack_pop(stack);
         const int b = stack_pop(stack);
@@ -40,6 +47,15 @@ void interpret (const char *source, Stack* stack) {
         }
     } else if (isEqual(op, "print")) { // Printar
         printf("%d\n", stack_pop(stack));
+    } else if (isEqual(op, "pop")) {
+        int value = stack_pop(stack);
+        
+        if (list_exist(list, arg)) {
+            list_set(list, arg, value);
+        } else {
+            list_append(list, arg, value);
+        }
+
     } else if (isEqual(op, "exit")) {  // Sair
         exit(0);
     }
