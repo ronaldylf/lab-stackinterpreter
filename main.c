@@ -1,10 +1,12 @@
 #include <stdio.h>
 
 #include "interpret.h"
+#include "stack.h"
 
 static void repl()
 {
   char line[1024];
+  Stack* stack = new_stack(10);
   for (;;)
   {
     printf("> ");
@@ -15,7 +17,7 @@ static void repl()
       break;
     }
 
-    interpret(line);
+    interpret(line, stack);
   }
 }
 
