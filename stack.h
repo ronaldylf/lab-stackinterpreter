@@ -16,6 +16,6 @@ void stack_push(Stack* s, int value);
 int stack_pop(Stack* s);
 
 // Imprime o conteúdo atual da pilha no terminal
-void stack_print(Stack* s);
+void stack_print(Stack* s);
 
 #endif

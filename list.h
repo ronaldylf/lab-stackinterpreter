@@ -31,4 +31,4 @@ int list_get(List* l, char* key);
 void list_set(List* l, char* key, int value);
 
 // Verifica se uma determinada chave existe na lista
-int list_exist(List* l, char* key);
+int list_exist(List* l, char* key);
