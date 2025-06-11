@@ -13,7 +13,7 @@
 // - 'source': string com o comando a ser interpretado (ex: "push 10")
 // - 'stack': ponteiro para a pilha onde os dados são manipulados
 // - 'list': ponteiro para a lista onde variáveis e valores são armazenados
-void interpret (const char source, Stack stack, List* list);
+void interpret (const char *source, Stack* stack, List* list);
 
 // Fim do bloco de proteção contra múltiplas inclusões
 #endif
