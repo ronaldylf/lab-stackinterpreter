@@ -21,6 +21,7 @@ Certifique-se de que você tenha um compilador C instalado (como gcc).
 
 Execute o seguinte comando no terminal:
 
-
+```
 gcc *.c -o repl
 ./repl
+```
