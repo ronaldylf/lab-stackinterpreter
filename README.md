@@ -1,9 +1,9 @@
 # Um REPL para uma Máquina Baseada em Pilha
 
 ## Integrantes
-- *Marcos Paulo Dominice Silva*  
-- *Wesley Ferreira Costa*  
-- *Ronaldy Lima França*
+- Marcos Paulo Dominice 
+- Wesley Ferreira Costa 
+- Ronaldy Lima França
 
 ## Descrição da Atividade
 
